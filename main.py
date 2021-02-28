@@ -74,10 +74,23 @@ def mAdd(operation):
 
     # Get Matrix
     clear()
-    matrixA = getMatrix("A", rowsA, colsA)
+    matrixA = getMatrix("A", rowsA, colsA)  # FIX when return = -1
     print()
     matrixB = getMatrix("B", rowsB, colsB)
     matrixC = getMatrixEmpty(rowsA, colsB)
+
+    # Calculation
+    for i in range(rowsA):
+        for j in range(colsA):
+            x = 0
+            if(operation == "add"):
+                x = matrixA[i][j] + matrixB[i][j]
+            else:
+                x = matrixA[i][j] - matrixB[i][j]
+            matrixC[i][j] = x
+    
+    clear()
+    printMatrix(matrixC, rowsA, colsB)
 
 def mMultiply(operation):
     # Get Matrix dimensions
