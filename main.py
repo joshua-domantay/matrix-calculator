@@ -74,9 +74,13 @@ def mAdd(operation):
 
     # Get Matrix
     clear()
-    matrixA = getMatrix("A", rowsA, colsA)  # FIX when return = -1
+    matrixA = getMatrix("A", rowsA, colsA)
+    if(matrixA == -1):
+        return
     print()
     matrixB = getMatrix("B", rowsB, colsB)
+    if(matrixB == -1):
+        return
     matrixC = getMatrixEmpty(rowsA, colsB)
 
     # Calculation
@@ -109,8 +113,12 @@ def mMultiply(operation):
     # Get Matrix
     clear()
     matrixA = getMatrix("A", rowsA, colsA)
+    if(matrixA == -1):
+        return
     print()
     matrixB = getMatrix("B", rowsB, colsB)
+    if(matrixB == -1):
+        return
     matrixC = getMatrixEmpty(rowsA, colsB)
 
     # Calculation
